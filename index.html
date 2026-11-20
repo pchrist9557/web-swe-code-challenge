@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAT Code Challenge</title>
+    <title>Solutions for Freight Brokers | DAT</title>
+    <meta
+      name="description"
+      content="DAT solutions for freight brokers: the largest carrier network in North America, rate analytics, and tools to win new business."
+    />
+    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="script.js" defer></script>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Each [data-section] is filled from data/content.json by script.js -->
+    <header class="site-header" data-section="nav"></header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" data-section="hero" aria-labelledby="hero-title"></section>
+      <section class="features" data-section="features" aria-labelledby="features-title"></section>
+      <div class="spotlights" data-section="spotlights"></div>
+      <section class="authority" data-section="authorityForm" aria-labelledby="authority-title"></section>
+    </main>
+
+    <aside class="cta-banner" data-section="cta" aria-labelledby="cta-title"></aside>
+
+    <footer class="site-footer" data-section="footer"></footer>
+
+    <noscript>
+      <p class="page-message">This page needs JavaScript enabled to load its content.</p>
+    </noscript>
   </body>
 </html>
