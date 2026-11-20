@@ -1050,9 +1050,10 @@ input.field__control:not(:placeholder-shown) + .field__label,
   display: flex;
   align-items: center;
   gap: var(--space-100);
-  width: 120px;
+  min-width: 120px;
   height: 40px;
-  padding-inline: 7px;
+  padding-inline: 7px 10px;
+  white-space: nowrap;
   color: var(--color-neutral-000);
   text-align: left;
   background: var(--color-neutral-900);
