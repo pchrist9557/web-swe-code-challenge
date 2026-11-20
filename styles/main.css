@@ -28,6 +28,7 @@
   /* Letter spacing */
   --letter-spacing-caps: 1.5px;
   --letter-spacing-loose: 0.2px;
+  --letter-spacing-submit: 0.6px; /* Figma form Submit button */
 
   /* Spacing scale (8px grid used in Figma) */
   --space-050: 4px;
@@ -39,12 +40,15 @@
   --space-500: 40px;
   --space-600: 48px;
   --space-700: 56px;
+  --space-750: 64px;
   --space-800: 72px;
   --space-900: 88px;
+  --space-950: 96px;
   --space-1000: 120px;
 
   /* Layout */
   --page-gutter: var(--space-200);
+  --divider-inset: var(--page-gutter);
   --container-max: 1216px;
   --nav-height: 76px;
   --control-height: 56px;
@@ -61,6 +65,7 @@
 @media (min-width: 1440px) {
   :root {
     --page-gutter: 112px;
+    --divider-inset: 62px; /* Figma: 1316px rules in a 1440px frame */
   }
 }
 
@@ -180,8 +185,7 @@ main:focus {
 }
 
 .divider {
-  width: calc(100% - 2 * var(--page-gutter));
-  max-width: 1316px;
+  width: calc(100% - 2 * var(--divider-inset));
   margin: 0 auto;
   border: 0;
   border-top: 1px solid var(--color-neutral-100);
@@ -539,6 +543,10 @@ main:focus {
 }
 
 /* ---------- Features ---------- */
+.features .section-title {
+  color: var(--color-ink-900); /* Figma text/primary (form title uses neutral-1000) */
+}
+
 .features {
   padding-block: var(--space-700);
 }
@@ -860,6 +868,10 @@ input.field__control:not(:placeholder-shown) + .field__label,
   border: 0;
 }
 
+.authority-form .btn {
+  letter-spacing: var(--letter-spacing-submit);
+}
+
 .authority-form__consent {
   font-size: var(--font-size-200);
   line-height: var(--line-height-body-sm);
@@ -1123,6 +1135,12 @@ input.field__control:not(:placeholder-shown) + .field__label,
   }
 
   .footer-reviews {
-    gap: var(--space-800);
+    gap: var(--space-750);
+  }
+}
+
+@media (min-width: 1440px) {
+  .site-footer {
+    padding-inline: var(--space-950);
   }
 }
