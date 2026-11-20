@@ -1,5 +1,7 @@
 # Christine DeVries — Code Challenge Submission
 
+**Live demo:** https://pchrist9557.github.io/web-swe-code-challenge/
+
 A responsive "Solutions for Freight Brokers" page built with plain HTML, CSS and JavaScript. All page copy is loaded from `data/content.json` (the mock CMS response) and styled with the design tokens in `styles/tokens.css`.
 
 ## Prerequisites
