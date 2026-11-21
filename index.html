@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solutions for Freight Brokers | DAT</title>
     <meta
       name="description"
       content="DAT solutions for freight brokers: the largest carrier network in North America, rate analytics, and tools to win new business."
-    />
-    <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="styles/tokens.css" />
-    <link rel="stylesheet" href="styles/main.css" />
+    >
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/main.css">
     <script src="script.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Each [data-section] is filled from data/content.json by script.js -->
+    <!-- Each [data-section] is filled from data/content.json by script.js.
+         Sections are rendered whole (with their headings) so no <section> is ever empty. -->
     <header class="site-header" data-section="nav"></header>
 
     <main id="main" tabindex="-1">
-      <section class="hero" data-section="hero" aria-labelledby="hero-title"></section>
-      <section class="features" data-section="features" aria-labelledby="features-title"></section>
+      <div data-section="hero"></div>
+      <div data-section="features"></div>
       <div class="spotlights" data-section="spotlights"></div>
-      <section class="authority" data-section="authorityForm" aria-labelledby="authority-title"></section>
+      <div data-section="authorityForm"></div>
     </main>
 
     <aside class="cta-banner" data-section="cta" aria-labelledby="cta-title"></aside>

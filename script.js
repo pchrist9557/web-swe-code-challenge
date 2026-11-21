@@ -120,6 +120,7 @@ function renderNav({ links, actions }) {
 function renderHero({ heading, subheading, callout }) {
   const image = MEDIA.hero;
   return `
+  <section class="hero" aria-labelledby="hero-title">
     <div class="container hero__inner">
       <div class="hero__content">
         <h1 class="hero__title" id="hero-title">${escapeHtml(heading)}</h1>
@@ -137,7 +138,8 @@ function renderHero({ heading, subheading, callout }) {
       </div>
       <img class="hero__media" src="${asset(image.src)}" alt="${escapeHtml(image.alt)}"
         width="${image.width}" height="${image.height}" fetchpriority="high">
-    </div>`;
+    </div>
+  </section>`;
 }
 
 function renderFeatures({ heading, items }) {
@@ -155,10 +157,12 @@ function renderFeatures({ heading, items }) {
   });
 
   return `
+  <section class="features" aria-labelledby="features-title">
     <div class="container">
       <h2 class="section-title" id="features-title">${escapeHtml(heading)}</h2>
       <ul class="features__list" tabindex="0" aria-label="${escapeHtml(heading)}">${cards}</ul>
-    </div>`;
+    </div>
+  </section>`;
 }
 
 function renderSpotlights(spotlights) {
@@ -219,7 +223,11 @@ function renderAuthorityForm(form) {
       <span>${escapeHtml(option)}</span>
     </label>`);
 
+  // The anchor id comes from the CMS so the hero "Get started" link stays in sync.
+  const sectionId = form.id ? ` id="${escapeHtml(form.id)}"` : "";
+
   return `
+  <section class="authority"${sectionId} aria-labelledby="authority-title">
     <div class="authority__inner">
       <h2 class="section-title" id="authority-title">${escapeHtml(form.heading)}</h2>
       <form class="authority-form" action="#" method="post">
@@ -232,7 +240,8 @@ function renderAuthorityForm(form) {
         <button class="btn btn--primary btn--sm btn--block" type="submit">${escapeHtml(form.submitLabel)}</button>
         <p class="authority-form__status" role="status" aria-live="polite"></p>
       </form>
-    </div>`;
+    </div>
+  </section>`;
 }
 
 function renderCta({ heading, text, actions }) {
@@ -314,10 +323,6 @@ function render(content) {
     const mount = document.querySelector(`[data-section="${key}"]`);
     if (mount && content[key]) mount.innerHTML = renderSection(content[key]);
   });
-
-  // The form's anchor id comes from the CMS so the hero CTA link stays in sync.
-  const formSection = document.querySelector('[data-section="authorityForm"]');
-  if (formSection && content.authorityForm?.id) formSection.id = content.authorityForm.id;
 }
 
 /* ---------- interactions ---------- */
