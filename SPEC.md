@@ -89,3 +89,5 @@ Follow-up prompts while refining:
 - Add custom inline validation messages once an error-color token exists.
 - Pull image and select-option data from the CMS response instead of the `MEDIA` and `SELECT_OPTIONS` maps.
 - Automated checks: HTML validation, axe accessibility scan, and visual regression against the Figma frames.
+
+- **W3C validation:** the live page passes the W3C Nu validator with no errors or warnings. Sections are rendered whole with their headings so none is ever empty in the raw HTML.
